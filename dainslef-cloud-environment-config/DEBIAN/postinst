@@ -19,6 +19,8 @@ echo "Running with config: $1 $2" # output shouldn't place before the debconf li
 # for Trojan service config
 run_template dainslef-cloud-environment-config/set_trojan_port TROJAN_PORT
 run_template dainslef-cloud-environment-config/set_trojan_password TROJAN_PASSWORD
+run_template dainslef-cloud-environment-config/set_trojan_remote_address TROJAN_REMOTE_ADDRESS
+run_template dainslef-cloud-environment-config/set_trojan_remote_port TROJAN_REMOTE_PORT
 envsubst < /tmp/trojan_config.json > /etc/trojan/config.json
 
 # for Shadowsocks service config

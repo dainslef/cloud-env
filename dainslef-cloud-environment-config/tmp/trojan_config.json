@@ -2,6 +2,8 @@
 	"run_type": "server",
 	"local_addr": "0.0.0.0",
 	"local_port": $TROJAN_PORT,
+	"remote_addr": "$TROJAN_REMOTE_ADDRESS",
+	"remote_port": $TROJAN_REMOTE_PORT,
 	"password": [
 		"$TROJAN_PASSWORD"
 	],

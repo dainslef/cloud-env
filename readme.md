@@ -5,9 +5,9 @@ Build package:
 
 ```html
 <!-- Generate deb package in current directory. -->
-$ dpkg-deb --build .
+$ dpkg-deb --build $REPO_ROOT/dainslef-cloud-environment-config
 <!-- Generate deb package in custom path. -->
-$ dpkg-deb --build . xxx_path/dainslef-cloud-environment-config.deb
+$ dpkg-deb --build $REPO_ROOT/dainslef-cloud-environment-config xxx_path/dainslef-cloud-environment-config.deb
 ```
 
 Usage:

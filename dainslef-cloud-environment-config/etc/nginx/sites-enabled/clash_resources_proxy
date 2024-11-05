@@ -4,12 +4,24 @@ server {
 	location / {
 		deny all;
 	}
+	# For github gist.
+	location /gist/ {
+		proxy_pass https://gist.githubusercontent.com/;
+	}
 	# Provide proxy for ssrsub.
-	location /ssrsub {
+	location /clash/ssrsub {
 		proxy_pass https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml;
 	}
 	# Provide proxy for clash rules.
-	location /clash-rules/ {
+	location /clash/rules/ {
 		proxy_pass https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/;
+	}
+	# Forward WebSocket to V2Ray.
+	location /fuckccp8964 {
+		proxy_http_version 1.1;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+		proxy_set_header Host $http_host;
+		proxy_pass http://127.0.0.1:9998;
 	}
 }
